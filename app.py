@@ -71,8 +71,9 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
+    # FIX: Replaced hardcoded randint(1, 100) with difficulty-aware low/high values using Claude Code
     st.session_state.secret = random.randint(low, high)
-    # Reset status so the game-over block doesn't halt the new game on rerun
+    # FIX: Reset status so the game-over block doesn't halt the new game on rerun using Claude Code
     st.session_state.status = "playing"
     st.success("New game started.")
     st.rerun()

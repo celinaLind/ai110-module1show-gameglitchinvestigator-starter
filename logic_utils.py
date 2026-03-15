@@ -1,9 +1,12 @@
+# FIX: Refactored logic into logic_utils.py using Copilot Agent mode
+
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
         return 1, 100
+    # FIX: Corrected Hard difficulty range from 1-50 to 1-200 so it is harder than Normal using Claude Code
     if difficulty == "Hard":
         return 1, 200
     return 1, 100
@@ -40,7 +43,7 @@ def check_guess(guess, secret):
     """
     if guess == secret:
         return "Win", "🎉 Correct!"
-    # FIXME: Logic breaks here
+    # FIX: Logic fixed here to provide user correct feedback direction using Claude Code
     try:
         if guess > secret:
             return "Too High", "📉 Go LOWER!"
