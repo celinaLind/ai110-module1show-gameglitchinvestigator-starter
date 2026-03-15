@@ -32,7 +32,7 @@ def parse_guess(raw: str):
 def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
-    # FIXME: Logic breaks here
+    # Logic fixed here to provide user correct feedback direction
     try:
         if guess > secret:
             return "Too High", "📉 Go LOWER!"
@@ -134,6 +134,8 @@ with col3:
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
+    # Reset status so the game-over block doesn't halt the new game on rerun
+    st.session_state.status = "playing"
     st.success("New game started.")
     st.rerun()
 
