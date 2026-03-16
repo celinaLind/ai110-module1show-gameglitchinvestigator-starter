@@ -25,13 +25,22 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+#### About the Game
+For each game a random "Secret" number is generated based on the the difficulty level selected. The player is tasked with guessing the number generated, after every guess the game provides a hint whether the number is higher or lower than their current guess The game ends once the "Secret" number is discover or when the player runs out of guesses.
+
+#### Bugs Found
+1. Discrepancy where the number selection range from Normal difficulty to Hard difficulty decreases
+2. If player finishes a game and selects "New Game" the game state is not reset
+3. The game provides incorrect hints: i.e. if secret equalled 20 and the player guessed 50, the hint provided would say to "Guess HIGHER" intead of lower.
+
+#### Fixes Applied
+1. Updated the "Hard" range from "0 to 50" to "0 to 200" which is greater than the 'Normal' difficulty range from "0 to 100"
+2. Added the call for a session state reset within the new_game function
+3. Flipped the logic to return the correct hints
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [ ] 
 
 ## 🚀 Stretch Features
 
