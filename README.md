@@ -40,7 +40,7 @@ For each game a random "Secret" number is generated based on the the difficulty 
 
 ## 📸 Demo
 
-- [ ] 
+![Game Run Screenshot](game_run.png)
 
 ## 🚀 Stretch Features
 
